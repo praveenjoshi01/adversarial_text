@@ -1,4 +1,3 @@
-
 import numpy as np
 
 def convert_to_vocab_id(vocab, pos, neg, convert_vocab=True, ignore_unk=False, ign_eos=False):
@@ -50,7 +49,7 @@ def load_file_preprocess(filename, lower=True):
         if lower:
             return w.lower()
         return w
-    with open(filename, 'r') as f:
+    with open(filename, 'r', encoding='utf-8') as f:
         for l in f:
             words = [conv(w) for w in l.strip().split(' ')]
             dataset.append(words)
